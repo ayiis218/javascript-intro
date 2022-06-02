@@ -1,0 +1,22 @@
+Contoh Method Javascript (Built-in Functions)
+
+1. valueOf()
+digunakan untuk mengembalikan nilai suatu angka.
+2. anchor()
+membuat jangkar HTML yang digunakan sebagai target hypertext.
+3. blink()
+membuat text berkedip seperti text di dalam tag <blink>.
+4. link()
+membuat tautan hypertext HTML yang memiliki URL lain
+5. filter()
+membuat sebuah array baru dengan semua elemen array ini yang mengembalikan nilai benar oleh fungsi pemfilteran yang disediakan.
+6. unshift()
+menambahkan satu atau lebih elemen ke depan array dan mengembalikan panjang array yang baru.
+7. push()
+menambahkan satu atau lebih elemen ke akhir array dan mengembalikan panjang array yang baru.
+8. setDate()
+mengatur hari dalam sebulan untuk tanggal yang ditentukan menurut waktu setempat.
+9. exec()
+menjalankan pencarian untuk mencari kecocokan dengan parameter stringnya.
+10. test()
+menguji kecocokan dalam parameter string-nya.

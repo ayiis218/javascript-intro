@@ -30,4 +30,4 @@ function cari(tampil, jml) {
 }
 //perintah untuk menjalankan program
 // console.log(searchName("an", 4, cari))
-console.log(searchName('li', 4, cari));
+console.log(searchName('li', 2, cari));

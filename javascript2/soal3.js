@@ -6,7 +6,6 @@ let seleksi = console.log(`Seleksi Nilai (${nilaiAwal},${nilaiAkhir},`,array,`)`
         //melakukan proses pencarian data dari parameter yang di input
         let cari = array.filter((x) => { return x > nilaiAwal && x < nilaiAkhir})
             jumlah = cari.length //banyak data array
-
             //mengurutkan data array dari hasil pencarian
             cari.sort((a, b) => {return a - b})
             //membuat validasi data lebih dari 5

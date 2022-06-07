@@ -13,7 +13,7 @@ function search (nilaiAwal, nilaiAkhir, array){
     // validasi data string
     if(nilaiString){
         console.log('Data yang di inputkan harus bersifat number')
-    // validasi data number
+    // validasi data string
     }else if(arrayString){
         console.log('Data array harus bersifat number')
     // validasi jumlah data array

@@ -1,45 +1,60 @@
-//menentukan data array
-const nama = [
-    'Abigail', 'Alexandra', 'Alison',
-    'Amanda', 'Angela', 'Bella',
-    'Carol', 'Caroline', 'Carolyn',
-    'Deirdre', 'Diana', 'Elizabeth',
-    'Ella', 'Faith', 'Olivia', 'Penelope'];
+const name = [
+   'Abigail',
+   'Alexandra',
+   'Alison',
+   'Amanda',
+   'Angela',
+   'Bella',
+   'Carol',
+   'Caroline',
+   'Carolyn',
+   'Deirdre',
+   'Diana',
+   'Elizabeth',
+   'Ella',
+   'Faith',
+   'Olivia',
+   'Penelope',
+];
 
-function searchName(kunci, jml, callback){
-  /*   membuat validasi untuk mengecek apakah kata kunci bernilai string
-    dan jumlah permintaan berupa angka dan tidak nol */
-    if(typeof kunci !== typeof 'string' || typeof jml !== 'number'){
-        return `periksa data input apakah sudah sesuai`
-    }
-    if (jml === 0){
-        return 'permintaan anda salah'
-    }
-    //untuk melakukan pencarian data dari parameter yang di inputkan
-    let tampil = nama.filter( x => { 
-        return x.toLowerCase().indexOf(kunci.toLowerCase()) !== -1 })
-        return callback(tampil, jml) //melakukan proses callback dari function fungsi
+function searchName(key, limit, callback) {
+   if (
+      typeof key !== typeof 'string' ||
+      typeof limit !== 'number' ||
+      !callback ||
+      limit < 1
+   ) {
+      return `Data harus berupa string dan limit harus bertipe number dan lebih dari nol`;
+   }
+
+   //untuk melakukan pencarian data dari parameter yang di inputkan
+   let filter = name.filter((e) => {
+      return e.toLowerCase().indexOf(key.toLowerCase()) !== -1;
+   });
+   return callback(filter, limit); //melakukan proses callback dari function fungsi
 }
 
-function cari(tampil, jml) {
-    byk = tampil.length
-    //melakukan validasi pengecekan jumlah data yng di inputkan parameter
-    if(byk === 0){
-        return 'Data yang di inginkan tidak ada'
-    }else if(byk !== jml){
-        if (byk > jml){  tampil.length -= byk - jml
-            return tampil
-        }else if(byk < jml){
-            console.log('Data kurang dari permintaan')
-            return tampil
-        }
-    }else{
-        return tampil
-    }
+function search(filter, limit) {
+   const data = filter.length;
+   //melakukan validasi pengecekan jumlah data yng di inputkan parameter
+   if (data <= 0) {
+      return 'Data yang di inginkan tidak ada';
+   } else if (data !== limit) {
+      if (data > limit) {
+         filter.length -= data - limit;
+         return filter;
+      } else if (data < limit) {
+         console.log('Data kurang dari permintaan');
+         return filter;
+      }
+   } else {
+      return filter.slice(0, limit);
+   }
 }
 //perintah untuk menjalankan program
-console.log(searchName('an', 2, cari))
-console.log(searchName('bi', 2, cari))
-console.log(searchName(123, 2, cari))
-console.log(searchName('an', '4', cari))
-console.log(searchName('bi', 0, cari))
+console.log(searchName('an', 2));
+console.log(searchName('an', 2, search));
+console.log(searchName('bi', 2, search));
+console.log(searchName(123, 2, search));
+console.log(searchName('an', '4', search));
+console.log(searchName('bi', -2, search));
